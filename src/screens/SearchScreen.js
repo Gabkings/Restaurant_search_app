@@ -7,6 +7,7 @@ import useResults from '../hooks/useResults';
 const SearchScreen = () => {
   const [term, setTerm] = useState('');
 
+
   const[searchApi, results, errorMessage] = useResults()
 
    const filterHelper = (price) => {
@@ -25,9 +26,9 @@ const SearchScreen = () => {
       />
       {errorMessage ? <Text>{errorMessage}</Text> : null}
       <ScrollView>
-        <ResultsList resultsList={filterHelper('$')} title={'Cost effective'} />
+        <ResultsList  resultsList={filterHelper('$')} title={'Cost effective'} />
         <ResultsList resultsList={filterHelper('$$')} title={'Bit Pricier'} />
-        <ResultsList resultsList={filterHelper('$$$')} title={'Bit Spender'} />
+        <ResultsList  resultsList={filterHelper('$$$')} title={'Bit Spender'} />
       </ScrollView>
     </>
   );
